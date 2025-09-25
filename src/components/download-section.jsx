@@ -14,7 +14,7 @@ export function DownloadSection() {
   const handleDownloadCSV = () => {
     setIsDateLoading(true)
     const selectedDate = document.getElementById("csvDatePicker")?.value
-    let url = "http://localhost:3000/api/attendance/downloadAttendanceCSV"
+    let url = "https://kcea-attendance-portal-backend.onrender.com/api/attendance/downloadAttendanceCSV"
     if (selectedDate) {
       url += `?date=${selectedDate}`
     }
@@ -30,7 +30,7 @@ export function DownloadSection() {
     setIsRollLoading(true)
     // Simulate download delay
     setTimeout(() => {
-      const url = `http://localhost:3000/api/attendance/downloadCompleteAttendanceCSV?rollNumber=${rollNumber}`
+      const url = `https://kcea-attendance-portal-backend.onrender.com/api/attendance/downloadCompleteAttendanceCSV?rollNumber=${rollNumber}`
       window.location.href = url
       setIsRollLoading(false)
     }, 1000)

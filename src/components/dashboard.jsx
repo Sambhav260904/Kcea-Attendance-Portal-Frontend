@@ -43,7 +43,7 @@ export function Dashboard() {
   }, [storedDescriptor])
 
   const loadModels = async () => {
-    const MODEL_URL = "http://localhost:3000/models"
+    const MODEL_URL = "https://kcea-attendance-portal-backend.onrender.com/models"
     try {
       await Promise.all([
         faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL),
@@ -59,7 +59,7 @@ export function Dashboard() {
 
   const fetchStoredDescriptor = async (rollNumber) => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/student/getStudent?rollNumber=${rollNumber}`)
+      const res = await axios.get(`https://kcea-attendance-portal-backend.onrender.com/api/student/getStudent?rollNumber=${rollNumber}`)
       if (res.data?.faceDescriptor) {
         setStoredDescriptor(new Float32Array(res.data.faceDescriptor))
       } else {
@@ -79,7 +79,7 @@ export function Dashboard() {
     if (!rollNumber) return setStatus("Roll number missing in URL")
 
     try {
-      const res = await axios.get(`http://localhost:3000/api/attendance/status?rollNumber=${rollNumber}`)
+      const res = await axios.get(`https://kcea-attendance-portal-backend.onrender.com/api/attendance/status?rollNumber=${rollNumber}`)
       if (res.data.present) {
         setStatus("Attendance already marked today.")
         setIsMarked(true)
@@ -143,7 +143,7 @@ export function Dashboard() {
     const rollNumber = urlParams.get("rollNumber")
     setIsLoading(true)
     try {
-      const res = await axios.post("http://localhost:3000/api/attendance/mark-attendance", { rollNumber })
+      const res = await axios.post("https://kcea-attendance-portal-backend.onrender.com/api/attendance/mark-attendance", { rollNumber })
       if (res.data.success) {
         toast.success("Attendance marked successfully!")
         setIsMarked(true)

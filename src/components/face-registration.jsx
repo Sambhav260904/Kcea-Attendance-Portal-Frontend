@@ -33,7 +33,7 @@ export function FaceRegistration() {
   const loadModels = async () => {
     try {
       // const MODEL_URL = "/models"
-      const MODEL_URL = "http://localhost:3000/models"; // Backend URL
+      const MODEL_URL = "https://kcea-attendance-portal-backend.onrender.com/models"; // Backend URL
       await Promise.all([
         faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL),
         faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL),
@@ -101,7 +101,7 @@ export function FaceRegistration() {
       console.log("Face Descriptor: ", faceDescriptor)
       console.log(name, rollNumber, branch, year)
 
-      await axios.post("http://localhost:3000/api/student/registerface", {
+      await axios.post("https://kcea-attendance-portal-backend.onrender.com/api/student/registerface", {
         name,
         rollNumber,
         branch,

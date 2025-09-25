@@ -48,7 +48,7 @@ export function RegistrationForm() {
     setIsLoading(true)
 
     try {
-      const res = await axios.post("http://localhost:3000/api/student/check", {
+      const res = await axios.post("https://kcea-attendance-portal-backend.onrender.com/api/student/check", {
         rollNumber: values.rollNumber,
       })
 

@@ -17,7 +17,7 @@ export function Navbar() {
   const handleDownloadCSV = () => {
     const dateInput = document.getElementById("csvDatePickerNav")
     const selectedDate = dateInput?.value
-    let url = "http://localhost:3000/api/attendance/downloadAttendanceCSV"
+    let url = "https://kcea-attendance-portal-backend.onrender.com/api/attendance/downloadAttendanceCSV"
     if (selectedDate) {
       url += `?date=${selectedDate}`
     }
