@@ -194,15 +194,17 @@ export function FaceRegistration() {
       </div>
 
 
-      <Card className="mt-12 shadow-lg hover:shadow-xl transition-all duration-300 bg-white w-1/2 mx-auto flex justify-center"> 
-        <CardContent className="p-8 text-center">
-          <h2 className="text-3xl font-bold text-blue-600 mb-4">Keep Smiling!</h2>
-          <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-            Your face is your best asset. Register your face with ease and enjoy seamless attendance management. Stay
-            confident, and let your smile shine through!
-          </p>
-        </CardContent>
-      </Card>
+      <Card className="mt-8 md:mt-12 shadow-lg hover:shadow-xl transition-all duration-300 bg-white w-11/12 sm:w-3/4 md:w-1/2 mx-auto flex justify-center">
+  <CardContent className="p-4 sm:p-6 md:p-8 text-center">
+    <h2 className="text-2xl sm:text-3xl font-bold text-blue-600 mb-3 sm:mb-4">
+      Keep Smiling!
+    </h2>
+    <p className="text-gray-700 text-base sm:text-lg max-w-full sm:max-w-2xl mx-auto">
+      Your face is your best asset. Register your face with ease and enjoy seamless attendance management. Stay
+      confident, and let your smile shine through!
+    </p>
+  </CardContent>
+</Card>
 
       <Features />
       <TestimonialCarousel />
